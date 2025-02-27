@@ -1,0 +1,232 @@
+/* App.css */
+:root {
+  --pastel-yellow: #fff9c4;
+  --pastel-pink: #ffcdd2;
+  --soft-white: #fffafa;
+  --dark-text: #2d3436;
+  --subtle-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  --border-radius: 12px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell;
+  background: linear-gradient(
+    135deg,
+    var(--pastel-yellow) 0%,
+    var(--pastel-pink) 100%
+  );
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.app-container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 2rem;
+  padding-top: 1rem;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: var(--border-radius);
+  box-shadow: var(--subtle-shadow);
+  backdrop-filter: blur(10px);
+  height: calc(100vh - 4rem);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.image-hover {
+  width: 200px;
+  height: 200px;
+  background-image: url('/public/icons/junior-speech.png');
+  background-size: cover;
+  /* transition: background-image 0.5s ease-in-out; */
+}
+.image-hover:hover {
+  background-image: url('/public/icons/woof-woof.png');
+}
+.image-hover:click {
+  background-image: url('/public/icons/woof-woof.png');
+}
+
+.app-header-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.app-header {
+  text-align: center;
+  margin-bottom: 1rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  max-height: 100px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+
+.app-header h1 {
+  color: var(--dark-text);
+  font-size: 2.5rem;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  margin-bottom: -2rem;
+}
+
+.app-header p {
+  color: #636e72;
+  font-size: 1.1rem;
+  font-weight: 300;
+}
+
+.controls-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+
+.mode-select .MuiOutlinedInput-root {
+  border-radius: 8px;
+  transition: var(--transition);
+  margin-top: 1rem;
+}
+
+.mode-select .MuiSelect-select {
+  padding: 12px 14px;
+}
+
+.slider-container {
+  padding: 1rem;
+  background: var(--soft-white);
+  border-radius: var(--border-radius);
+}
+
+.slider-container .MuiSlider-root {
+  color: var(--pastel-pink);
+}
+
+.slider-container .MuiSlider-markLabel {
+  font-weight: 500;
+  color: var(--dark-text);
+}
+
+.text-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  flex: 1;
+  overflow: hidden;
+}
+
+.input-section,
+.output-section {
+  display: flex;
+  flex-direction: column;
+  height: 90%;
+}
+
+.input-section p,
+.output-section p {
+  color: #636e72;
+  font-size: 1.1rem;
+  font-weight: 300;
+  margin-left: 1.5rem;
+}
+
+.text-area,
+.output-content {
+  flex: 1;
+  padding: 1.5rem;
+  border: 2px solid rgba(0, 0, 0, 0.05);
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  line-height: 1.6;
+  resize: none;
+  background: var(--soft-white);
+  transition: var(--transition);
+  overflow-y: auto;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell;
+}
+
+.text-area:focus {
+  border-color: var(--pastel-pink);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 205, 210, 0.3);
+}
+
+.paraphrase-button {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin: 1.5rem auto;
+  padding: 1rem 2.5rem;
+  background: linear-gradient(
+    135deg,
+    var(--pastel-pink) 0%,
+    var(--pastel-yellow) 100%
+  );
+  color: var(--dark-text);
+  border: none;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: var(--subtle-shadow);
+}
+
+.paraphrase-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: var(--border-radius);
+}
+
+.error-message {
+  color: #e74c3c;
+  background: #ffe6e6;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+  border: 1px solid #ffcccc;
+}
+
+.placeholder {
+  color: #b2bec3;
+  font-weight: 300;
+  text-align: center;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell;
+}
+
+@media (max-width: 768px) {
+  .controls-container {
+    grid-template-columns: 1fr;
+  }
+  .text-container {
+    grid-template-columns: 1fr;
+  }
+  .paraphrase-button {
+    width: 100%;
+    justify-content: center;
+  }
+}
