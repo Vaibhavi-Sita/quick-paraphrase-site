@@ -1,13 +1,14 @@
 import React from 'react'
-import Mascot from './components/Mascot'
+import { Routes, Route, Navigate } from 'react-router-dom'
 import Paraphraser from './components/Paraphraser'
 import './App.css'
 
-const App = () => {
+function App() {
   return (
-    <div className='app-root'>
-      <Paraphraser />
-    </div>
+    <Routes>
+      <Route path='/' element={<Navigate to='/tool' replace />} />
+      <Route path='/tool' element={<Paraphraser />} />
+    </Routes>
   )
 }
 

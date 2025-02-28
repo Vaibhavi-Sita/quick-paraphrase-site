@@ -5,9 +5,10 @@
  <meta charset="utf-8">
  <title>Redirecting...</title>
  <script>
-  sessionStorage.redirect = location.href;
+  const segment = 1;
+  const redirect = location.pathname.split('/').slice(0, 1 + segment).join('/') + '/tool/';
+  location.replace(redirect);
  </script>
- <meta http-equiv="refresh" content="0;URL='/'" />
 </head>
 
 </html>

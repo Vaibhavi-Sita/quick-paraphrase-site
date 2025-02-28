@@ -11,7 +11,7 @@ import {
 import { FiArrowRight } from 'react-icons/fi'
 import '../App.css'
 
-const Paraphrase = () => {
+const Paraphraser = () => {
   const [inputText, setInputText] = useState('')
   const [outputText, setOutputText] = useState('')
   const [mode, setMode] = useState('standard')
@@ -28,7 +28,6 @@ const Paraphrase = () => {
     { value: 'simple', label: 'Simple' },
     { value: 'creative', label: 'Creative' },
   ]
-  // const url = process.env.API_URL
 
   const handleParaphrase = async (e) => {
     e.preventDefault()
@@ -160,4 +159,4 @@ const Paraphrase = () => {
   )
 }
 
-export default Paraphrase
+export default Paraphraser
