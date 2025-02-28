@@ -1,4 +1,3 @@
-/* App.css */
 :root {
   --pastel-yellow: #fff9c4;
   --pastel-pink: #ffcdd2;
@@ -20,22 +19,22 @@ body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
-  overflow: hidden;
+  zoom: 0.9;
+  overflow-y: auto;
 }
 
 .app-container {
   max-width: 1200px;
   margin: 2rem auto;
   padding: 2rem;
-  padding-top: 1rem;
   background: rgba(255, 255, 255, 0.95);
   border-radius: var(--border-radius);
   box-shadow: var(--subtle-shadow);
   backdrop-filter: blur(10px);
-  height: calc(100vh - 4rem);
+  min-height: 90vh;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  overflow: auto;
 }
 
 .image-hover {
@@ -43,12 +42,8 @@ body {
   height: 200px;
   background-image: url('/public/icons/junior-speech.png');
   background-size: cover;
-  /* transition: background-image 0.5s ease-in-out; */
 }
 .image-hover:hover {
-  background-image: url('/public/icons/woof-woof.png');
-}
-.image-hover:click {
   background-image: url('/public/icons/woof-woof.png');
 }
 
@@ -58,43 +53,45 @@ body {
   gap: 1rem;
   margin-bottom: 1rem;
 }
+
 .app-header {
   text-align: center;
-  margin-bottom: 1rem;
   padding-bottom: 2rem;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  max-height: 100px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
-  margin-bottom: 1rem;
 }
 
 .app-header h1 {
   color: var(--dark-text);
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 600;
   letter-spacing: -0.5px;
-  margin-bottom: -2rem;
+  margin-bottom: 0.5rem;
 }
 
 .app-header p {
   color: #636e72;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 300;
 }
 
 .controls-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin-bottom: 1rem;
+  gap: 1rem;
+  position: sticky;
+  top: 0;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(5px);
+  z-index: 1;
+  padding: 1rem 0;
 }
 
 .mode-select .MuiOutlinedInput-root {
   border-radius: 8px;
   transition: var(--transition);
-  margin-top: 1rem;
 }
 
 .mode-select .MuiSelect-select {
@@ -121,21 +118,74 @@ body {
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
   flex: 1;
-  overflow: hidden;
+  min-height: 60vh;
 }
 
 .input-section,
 .output-section {
   display: flex;
   flex-direction: column;
-  height: 90%;
+  height: 100%;
+}
+.output-header-section {
+  display: flex;
+  flex-direction: row;
+}
+.output-header {
+  /* display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px; */
+  height: 2rem;
 }
 
+.output-header p {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--theme-text-color, #333);
+}
+
+sl-button {
+  background-color: transparent !important;
+  border: none !important;
+  color: var(--theme-text-color, #333) !important;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover state for the button */
+sl-button:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Active state for the button */
+sl-button:active {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Optional dynamic classes for different copy states */
+/* Default state */
+.copy-default {
+  color: var(--theme-text-color, #333);
+}
+
+/* Success state */
+.copy-success {
+  color: #28a745; /* green for success */
+}
+
+/* Error state */
+.copy-error {
+  color: #dc3545; /* red for error */
+}
 .input-section p,
 .output-section p {
   color: #636e72;
-  font-size: 1.1rem;
-  font-weight: 300;
+  font-size: 0.9rem;
   margin-left: 1.5rem;
 }
 
@@ -145,8 +195,8 @@ body {
   padding: 1.5rem;
   border: 2px solid rgba(0, 0, 0, 0.05);
   border-radius: var(--border-radius);
-  font-size: 1rem;
-  line-height: 1.6;
+  font-size: 0.95rem;
+  line-height: 1.5;
   resize: none;
   background: var(--soft-white);
   transition: var(--transition);
@@ -165,8 +215,8 @@ body {
   display: flex;
   align-items: center;
   gap: 0.8rem;
-  margin: 1.5rem auto;
-  padding: 1rem 2.5rem;
+  margin: 1rem auto;
+  padding: 0.8rem 2rem;
   background: linear-gradient(
     135deg,
     var(--pastel-pink) 0%,
@@ -175,7 +225,7 @@ body {
   color: var(--dark-text);
   border: none;
   border-radius: 30px;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 500;
   cursor: pointer;
   transition: var(--transition);
@@ -213,13 +263,6 @@ body {
 .placeholder {
   color: #b2bec3;
   font-weight: 300;
-  text-align: center;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-    Ubuntu, Cantarell;
-}
-.noscript-warning {
-  padding: 2rem;
-  text-align: center;
 }
 
 #loading-overlay {
@@ -260,9 +303,13 @@ body {
   }
   .text-container {
     grid-template-columns: 1fr;
+    min-height: auto;
   }
   .paraphrase-button {
     width: 100%;
     justify-content: center;
+  }
+  .app-header h1 {
+    font-size: 1.75rem;
   }
 }
