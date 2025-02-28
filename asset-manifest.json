@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/quick-paraphrase-site/static/css/main.cc001016.css",
-    "main.js": "/quick-paraphrase-site/static/js/main.9c1862a9.js",
+    "main.css": "/quick-paraphrase-site/static/css/main.b26b2bc1.css",
+    "main.js": "/quick-paraphrase-site/static/js/main.03a476fe.js",
     "static/js/453.971135f9.chunk.js": "/quick-paraphrase-site/static/js/453.971135f9.chunk.js",
     "static/media/woof-woof.png": "/quick-paraphrase-site/static/media/woof-woof.aa678bd7f705d77afc8e.png",
     "static/media/junior-speech.png": "/quick-paraphrase-site/static/media/junior-speech.a6a440185fdc5d6c882f.png",
     "index.html": "/quick-paraphrase-site/index.html",
-    "main.cc001016.css.map": "/quick-paraphrase-site/static/css/main.cc001016.css.map",
-    "main.9c1862a9.js.map": "/quick-paraphrase-site/static/js/main.9c1862a9.js.map",
+    "main.b26b2bc1.css.map": "/quick-paraphrase-site/static/css/main.b26b2bc1.css.map",
+    "main.03a476fe.js.map": "/quick-paraphrase-site/static/js/main.03a476fe.js.map",
     "453.971135f9.chunk.js.map": "/quick-paraphrase-site/static/js/453.971135f9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.cc001016.css",
-    "static/js/main.9c1862a9.js"
+    "static/css/main.b26b2bc1.css",
+    "static/js/main.03a476fe.js"
   ]
 }
