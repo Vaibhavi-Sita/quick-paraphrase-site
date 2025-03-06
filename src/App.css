@@ -134,54 +134,17 @@ body {
 .output-header {
   /* display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin-bottom: 16px; */
-  height: 2rem;
+  justify-content: space-between; */
+  /* margin-bottom: 16px; */
+  /* height: 2rem; */
 }
-
+/* 
 .output-header p {
   font-size: 1.5rem;
   font-weight: 600;
   margin: 0;
   color: var(--theme-text-color, #333);
-}
-
-sl-button {
-  background-color: transparent !important;
-  border: none !important;
-  color: var(--theme-text-color, #333) !important;
-  font-size: 1rem;
-  cursor: pointer;
-  padding: 4px 8px;
-  border-radius: 4px;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-/* Hover state for the button */
-sl-button:hover {
-  background-color: rgba(0, 0, 0, 0.05);
-}
-
-/* Active state for the button */
-sl-button:active {
-  background-color: rgba(0, 0, 0, 0.1);
-}
-
-/* Optional dynamic classes for different copy states */
-/* Default state */
-.copy-default {
-  color: var(--theme-text-color, #333);
-}
-
-/* Success state */
-.copy-success {
-  color: #28a745; /* green for success */
-}
-
-/* Error state */
-.copy-error {
-  color: #dc3545; /* red for error */
-}
+} */
 .input-section p,
 .output-section p {
   color: #636e72;

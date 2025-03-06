@@ -8,11 +8,8 @@ import {
   InputLabel,
   CircularProgress,
 } from '@mui/material'
-import { FiArrowRight, FiCopy } from 'react-icons/fi'
-import { SlCopyButton } from '@shoelace-style/shoelace/dist/react/copy-button'
-import { SlIcon } from '@shoelace-style/shoelace/dist/react/icon'
+import { FiArrowRight } from 'react-icons/fi'
 import '../App.css'
-import '@shoelace-style/shoelace/dist/components/button/button.js'
 
 const Paraphraser = () => {
   const [inputText, setInputText] = useState('')
@@ -62,22 +59,6 @@ const Paraphraser = () => {
       )
     } finally {
       setIsLoading(false)
-    }
-  }
-
-  const copyToClipboard = () => {
-    if (outputText) {
-      navigator.clipboard
-        .writeText(outputText)
-        .then(() => {
-          setCopyState('success')
-          setTimeout(() => setCopyState('default'), 2000)
-        })
-        .catch((err) => {
-          console.error('Error copying text: ', err)
-          setCopyState('error')
-          setTimeout(() => setCopyState('default'), 2000)
-        })
     }
   }
 
@@ -158,34 +139,8 @@ const Paraphraser = () => {
         </div>
 
         <div className='output-section'>
-          <div className='output-header-section'>
-            <div className='output-header'>
-              <p>Result</p>
-              <SlCopyButton value='Shoelace rocks!' />
-            </div>
-            <div>
-              {outputText && (
-                <sl-copy-button
-                  value='Text to copy'
-                  copy-label='Copy'
-                  success-label='Copied!'
-                  error-label='Error'
-                  onClick={copyToClipboard}
-                  className={
-                    copyState === 'default'
-                      ? 'copy-default'
-                      : copyState === 'success'
-                      ? 'copy-success'
-                      : 'copy-error'
-                  }
-                  size='small'
-                >
-                  {copyState === 'default' && 'Copy'}
-                  {copyState === 'success' && 'Copied!'}
-                  {copyState === 'error' && 'Error'}
-                </sl-copy-button>
-              )}
-            </div>
+          <div className='output-header'>
+            <p>Result</p>
           </div>
           <div className='output-content'>
             {isLoading ? (
